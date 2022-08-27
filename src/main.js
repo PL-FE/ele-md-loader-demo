@@ -3,10 +3,10 @@ import App from "./App.vue";
 import router from "./router/index.js";
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
-import demoBlock from "@/components/.components/demo-block.vue";
+import DemoBlock from "@/components/.components/DemoBlock.vue";
 
 Vue.use(ElementUI);
-Vue.component("demo-block", demoBlock);
+Vue.component("demo-block", DemoBlock);
 Vue.config.productionTip = false;
 
 new Vue({

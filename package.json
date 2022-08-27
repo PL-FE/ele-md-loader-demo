@@ -23,6 +23,11 @@
     "eslint-plugin-vue": "^8.0.3",
     "less": "^4.1.3",
     "less-loader": "^11.0.0",
+    "markdown-it": "^13.0.1",
+    "markdown-it-anchor": "^8.6.4",
+    "markdown-it-chain": "^1.3.0",
+    "markdown-it-container": "^3.0.0",
+    "transliteration": "^2.3.5",
     "vue-template-compiler": "^2.6.14"
   },
   "eslintConfig": {

@@ -63,14 +63,13 @@
 }
 </style>
 <template>
-    <div class="page-container page-guide">
+    <div class="page-container page-guide page-component">
         <el-row>
             <el-col :xs="24" :sm="5">
                 <SideNav :data="navsData" :base="`/fe`"></SideNav>
             </el-col>
             <el-col :xs="24" :sm="19">
-                <!-- <router-view class="content"></router-view> -->
-                <!-- <component :is="$router.params.name"></component> -->
+                <component :is="'md-' + $route.params.name"></component>
             </el-col>
         </el-row>
     </div>
@@ -78,8 +77,19 @@
 <script>
 import navsData from './nav.config.js'
 import SideNav from './SideNav.vue'
+const requireComponents = require.context('../docs/', false, /\.md/)
+const loadDocsComponents = {}
+requireComponents.keys().forEach(fileName => {
+    // 组件实例
+    const reqCom = requireComponents(fileName)
+    // 截取路径作为组件名
+    const reqComName = fileName.replace(/\.\//, '').replace(/\.md/, '')
+    // 组件挂载
+    loadDocsComponents['md-' + reqComName] = reqCom.default || reqCom
+})
+console.log('loadDocsComponents', loadDocsComponents);
 export default {
-    components: { SideNav },
+    components: { SideNav, ...loadDocsComponents },
     data() {
         return {
             navsData: navsData

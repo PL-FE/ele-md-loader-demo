@@ -4,35 +4,23 @@ export default [
     path: "/changelog",
   },
   {
-    name: "Element React",
-    href: "https://elemefe.github.io/element-react/",
+    name: "Iconfont",
+    href: "https://www.iconfont.cn/",
   },
   {
-    name: "Element Angular",
-    href: "https://element-angular.faas.ele.me/",
+    name: "Vue",
+    href: "https://cn.vuejs.org/",
   },
   {
-    name: "开发指南",
+    name: "开发规范",
     children: [
       {
-        path: "/installation",
-        name: "安装",
+        path: "/git",
+        name: "代码提交规范",
       },
       {
-        path: "/quickstart",
-        name: "快速上手",
-      },
-      {
-        path: "/i18n",
-        name: "国际化",
-      },
-      {
-        path: "/custom-theme",
-        name: "自定义主题",
-      },
-      {
-        path: "/transition",
-        name: "内置过渡动画",
+        path: "/docs-rule",
+        name: "文档编写规范",
       },
     ],
   },
