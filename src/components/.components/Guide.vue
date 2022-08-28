@@ -77,6 +77,7 @@
 <script>
 import navsData from './nav.config.js'
 import SideNav from './SideNav.vue'
+import Vue from 'vue'
 const requireComponents = require.context('../docs/', false, /\.md/)
 const loadDocsComponents = {}
 requireComponents.keys().forEach(fileName => {
@@ -87,7 +88,16 @@ requireComponents.keys().forEach(fileName => {
     // 组件挂载
     loadDocsComponents['md-' + reqComName] = reqCom.default || reqCom
 })
-console.log('loadDocsComponents', loadDocsComponents);
+
+const components = require.context('../', false, /\.vue/)
+components.keys().forEach(fileName => {
+    // 组件实例
+    const reqCom = components(fileName)
+    // 截取路径作为组件名
+    const reqComName = fileName.replace(/\.\//, '').replace(/\.vue/, '')
+    // 组件挂载
+    Vue.component(reqComName, reqCom.default || reqCom)
+})
 export default {
     components: { SideNav, ...loadDocsComponents },
     data() {

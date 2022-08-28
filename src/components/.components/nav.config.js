@@ -224,6 +224,10 @@ export default [
         groupName: "Others",
         list: [
           {
+            path: "/custom-dialog",
+            title: "自定义的Dialog 对话框",
+          },
+          {
             path: "/dialog",
             title: "Dialog 对话框",
           },
