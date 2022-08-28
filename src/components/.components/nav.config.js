@@ -39,22 +39,6 @@ export default [
             title: "Container 布局容器",
           },
           {
-            path: "/color",
-            title: "Color 色彩",
-          },
-          {
-            path: "/typography",
-            title: "Typography 字体",
-          },
-          {
-            path: "/border",
-            title: "Border 边框",
-          },
-          {
-            path: "/icon",
-            title: "Icon 图标",
-          },
-          {
             path: "/button",
             title: "Button 按钮",
           },

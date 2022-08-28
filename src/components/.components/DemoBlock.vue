@@ -147,7 +147,8 @@ export default {
 
   watch: {
     isExpanded(val) {
-      this.codeArea.style.height = val ? `${this.codeAreaHeight + 1} px` : '0'
+      // `${this.codeAreaHeight + 1}px` 容易被格式化，在培训、前面加空格
+      this.codeArea.style.height = val ? this.codeAreaHeight + 1 + 'px' : '0'
       if (!val) {
         this.fixedControl = false
         this.$refs.control.style.left = '0'

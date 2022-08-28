@@ -5,7 +5,7 @@ Vue.use(VueRouter);
 import Guide from "@/components/.components/Guide.vue";
 // const routes = [{ path: "/", component: Guide }];
 const routes = [
-  { path: "/", redirect: "/fe/tree" },
+  { path: "/", redirect: "/fe/changelog" },
   { path: "/fe/:name", component: Guide },
 ];
 
